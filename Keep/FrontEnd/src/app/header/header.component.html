@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" class="tool-bar" >
+	<div (click)="returnDashboard()"> Keep </div>
+	
+	<div *ngIf="isSearch" class="search">
+		
+		<input type="text" class="search-bar" [(ngModel)]="searchStr" placeholder="Search..">
+		<div class="search-icon-div" (click)="onSearch($event)">
+			<div class="search-icon"></div>
+		</div>
+		<div *ngIf='errSearch'>{{errSearch}}</div>
+			<!--<div class="favorites-div" [ngStyle]="{'background': myFavorites ? 'url(\'../../assets/icons/fav_on.png\')' : 'url(\'../../assets/icons/fav_off.png\')'}"  
+			(click)="my_favorites($event)">-->
+			<div class="favorites-div" (click)="my_favorites($event)">
+				<img *ngIf="myFavorites"  src="'../../assets/icons/fav_on.png" alt="fav_on">
+				<img *ngIf="!myFavorites" src="'../../assets/icons/fav_off.png" alt="fav_off">
+			</div>
+		<!--<input type="checkbox" [(ngModel)]="myFavorites" (change)="my_favorites($event)"> My Favorites-->
+		
+
+		<div class="keep-c-toggle-view">
+			<i *ngIf="isNoteView" class="material-icons switchToListView" (click)="routeSet('list')">view_list</i>
+			<i *ngIf="!isNoteView" class="material-icons switchToNoteView" (click)="routeSet('note')">view_quilt</i>
+		</div>
+
+		<button mat-button (click)="onLogout($event)">Logout</button>
+	</div>
+	
+</mat-toolbar>
+
+<mat-toolbar color="white" *ngIf="displayselectBar" class="selectToolbar">
+	<div class="more-selected" (click)="selectedMore()">
+	</div>
+	<div class="menu-options" [style.display]="menuSelected ?'block':'none'" >
+		<div (click)="noteDelete()">Delete</div>
+		<div (click)="changeLabelOption()">Add the label</div>
+		<div (click)="shareNotes()"> Share the notes </div>
+		<div (click)="markFavourites()"> Mark as Favorite </div>
+	</div>
+	<div [style.display]="changeLabelMenu ?'block':'none'"  class="label-options" >
+		<div class="each-label"  *ngFor="let item of receivedLabels;let i=index">
+			<div class="check-div">
+				<mat-checkbox  id="label_check+{{i}}" [indeterminate]="indeterminate[item.labelId]" [checked]="labelStatus[item.labelId]" (change)="selectingLabels($event,item,item.labelId)" matInput >{{item.labelName}}</mat-checkbox>
+			</div>
+		</div>
+		<div class="done-close" (click)="change_labels()">
+			done
+		</div>
+	</div>
+</mat-toolbar>

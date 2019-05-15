@@ -1,0 +1,32 @@
+<div class="keep-c-list-container">
+	<label>Not-Started</label>
+	<mat-list *ngFor="let note of notStartedNotes;let i=index">
+       <app-note (myEvent)="selection(note,i)" [note] = "note" [i]="i" ></app-note>
+    </mat-list>
+
+</div>
+<div class="keep-c-list-container">
+	<label>Started</label>
+	<mat-list *ngFor="let note of startedNotes;let i=index">
+       <app-note (myEvent)="selection(note,i)" [note] = "note" [i]="i" ></app-note>
+    </mat-list>
+</div>
+
+<div class="keep-c-list-container">
+	<label>Completed</label>
+	<mat-list *ngFor="let note of completedNotes;let i=index">
+       <app-note (myEvent)="selection(note,i)" [note] = "note" [i]="i"></app-note>
+    </mat-list>
+</div>
+ <!---->
+<div class="reminder-container" *ngIf="notification_message">
+    <div  class="reminder" >
+        <div class="close_reminder" (click)="close_notification()">
+        </div>
+        <div class="reminder-text">
+            <div class="notif-note">
+                {{ notification_message | titlecase }}
+            </div>
+        </div>
+    </div>
+</div>

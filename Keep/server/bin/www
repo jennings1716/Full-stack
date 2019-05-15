@@ -1,0 +1,8 @@
+const app = require('../app')();
+const {port} = require('../config');
+
+var server = app.listen(port, () => {
+  console.log('Express App listening on port:', port);
+});
+var io = require('socket.io').listen(server, {path: '/api/v1/sockets/reminder'});
+require('../sockets/base')(io);

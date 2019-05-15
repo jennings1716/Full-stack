@@ -1,0 +1,19 @@
+
+
+.keep-comp-note-taker-panel{
+    margin-left:100px;
+    width:50vw;
+}
+
+.keep-comp-note-taker-wrapper{
+     display:flex;
+     flex-direction:column;
+}
+
+.keep-comp-button{
+    display:flex;
+    justify-content:flex-end;
+}
+mat-expansion-panel{
+    background-color:white;
+}

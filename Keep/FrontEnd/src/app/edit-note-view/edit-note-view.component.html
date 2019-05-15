@@ -1,0 +1,38 @@
+
+<label class="error-message">{{ errMessage }}</label>
+<mat-form-field> 
+  <input [(ngModel)]="note.title" name="editTitle" matInput placeholder="Title" type="text">
+</mat-form-field>
+<mat-form-field>
+  <textarea [(ngModel)]="note.text" name="editText" matInput placeholder="Text"></textarea>
+</mat-form-field>
+<mat-form-field>
+<mat-select name="editStatus" placeholder="Select state" [(ngModel)]="note.state">
+  <mat-option *ngFor="let state of states" [value]="state">
+    {{ state }}
+  </mat-option>
+</mat-select>
+</mat-form-field>
+<div class="fav-rem">
+  <mat-checkbox [checked]="note.favorite" (change)="toggle($event)" matInput >Favorite</mat-checkbox>
+  <div class="set-remind" (click)="displayReminderMenu()">
+      <div class="reminder-menu"  [style.display]="displayReminder ?'block':'none'">
+        <div class="reminder-menu-header">
+          <div class="back-icon"></div>
+          <div class="menu-heading">Set Time and Date</div>
+        </div>
+        <div class="reminder-menu-body">
+          <label>
+              Date Time:
+              <input [(ngModel)]="note.reminder" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+              <owl-date-time  #dt></owl-date-time>
+          </label>
+          <button [disabled]="note.reminder!=null?false:true" mat-button (click)="setReminder(note)">Set Reminder</button>
+        </div>
+      </div>
+  </div>
+  
+</div>
+<div class="keep-c-done-wrapper">
+  <button mat-button (click)="onSave()">Save</button>
+</div>

@@ -1,0 +1,31 @@
+.fav-rem{
+    display: inline-flex;
+}
+.set-remind{
+    background:url('../../assets/icons/reminder_icon.svg');
+    width: 31px;
+    height: 32px;
+    background-size: cover;
+    margin-left: 64px;
+}
+.reminder-menu{
+    position: absolute;
+    padding: 5px 10px 5px 17px;
+    background: white;
+    box-shadow: 0 9px 46px 8px rgba(0,0,0,.12);
+    width: 200px;
+    height: 250px;
+}
+.reminder-menu-header{
+    display: inline-flex;
+}
+
+.back-icon{
+    background:url('../../assets/icons/back-icon.svg');
+    width: 25px;
+    height: 24px;
+}
+.menu-heading{
+    padding: 7px;
+    padding-left: 20px; 
+}

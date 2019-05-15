@@ -1,0 +1,10 @@
+<div class="keep-note-card">
+  <mat-checkbox class="matcheckbox" id ="{{note.state}}+{{i}}" [checked]="note.state=='not-started'?notStartedSelected[i]:note.state=='started'?startedSelected[i]:completedSelected[i]"
+   (change)="selection($event,note,i)"  matInput ></mat-checkbox>
+  <mat-card class="matcard" (click)="editNote(note.noteId)">
+    <mat-card-title >{{note.title}}</mat-card-title>
+    <mat-card-content>{{note.text}}</mat-card-content> 
+  </mat-card>
+</div>
+
+<!--[checked]="note.state==not-started?notStartedSelected[i]:note.state==started?startedSelected[i]:completedSelected[i]"-->

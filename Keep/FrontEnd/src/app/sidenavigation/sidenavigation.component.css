@@ -1,0 +1,29 @@
+.side-reminders{
+    border-bottom: 1px solid #ddd;
+    min-height: 40px;
+    padding: 10px 8px;
+}
+.side-reminders-div{
+    padding-left: 30px;
+}
+.side-labels{
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding: 10px 8px;
+    min-height: 40px;
+}
+.side-labels-div{
+    padding-left: 30px;
+}
+
+.side-labels-item{
+    padding-left: 24px;
+    display: inline-flex;
+}
+.edit-label{
+    display: flex;
+    padding-left: 24px;
+}
+.label-name{
+    margin-left: 8px;
+}

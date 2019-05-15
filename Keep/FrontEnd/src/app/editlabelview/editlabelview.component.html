@@ -1,0 +1,29 @@
+<!--<label class="error-message">{{ errMessage }}</label>-->
+<div class="edit-label-div">
+  <div class="edit-label-head">Create Labels</div>
+  <div class="create-label">
+    <div class="delete-label" (click)="delete_label()">
+    </div>
+    <div class="create-label-text">
+      <input  name="label" [(ngModel)]="label_text" matInput  type="text" autofocus=true >
+    </div>
+    <div class="add-label" (click)="add_label()">
+    </div>
+
+  </div>
+  
+  <div class="edit-label-text" *ngFor="let item of totalLabels">
+    <div class="delete-label" (click)="delete_label(item.labelId)">
+    </div>
+    <div class="textfield-label">
+      <!--<mat-form-field> -->
+        {{item.labelName}}
+        <!--<input  name="" matInput  type="text" value="{{item.labelName}}" >-->
+      <!--</mat-form-field>-->
+    </div>
+  </div>
+  <!--<mat-checkbox (change)="toggle($event)" matInput >Favorite</mat-checkbox>-->
+  <!--<div class="keep-c-done-wrapper">
+    <button mat-button (click)="Done()">Done</button>
+  </div>-->
+</div>

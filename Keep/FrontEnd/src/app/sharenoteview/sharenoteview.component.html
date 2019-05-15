@@ -1,0 +1,33 @@
+<div class="share-div">
+  <div class="share-notes">
+        <div class="note-chips"  *ngFor="let note of selectedNotes;let i=index">
+          <div class="chip-title">{{note.title}}</div>
+          <div class="remove-chip" (click)="removeChip(i)"></div>
+        </div>
+  </div>
+  <div class="receivers">
+    Enter the name of the person
+    <div class="create-label">
+      <div class="delete-label" (click)="delete_receiver()">
+      </div>
+      <div class="create-label-text">
+        <input  name="label" [(ngModel)]="receiver_name" matInput  type="text" autofocus=true >
+      </div>
+      <div class="add-label" (click)="add_receiver()">
+      </div>
+    </div>
+  
+    <div class="edit-label-text" *ngFor="let receiver of receivers;let j=index">
+      <div class="delete-label" (click)="delete_receiver(j)">
+      </div>
+      <div class="textfield-label">
+        <!--<mat-form-field> -->
+         {{receiver}}
+        <!--</mat-form-field>-->
+      </div>
+    </div>
+    <div class="share-button" *ngIf="receivers.length>0" >
+        <button class="share" mat-button (click)="share_notes()">Share</button>
+    </div>
+  </div>
+</div>

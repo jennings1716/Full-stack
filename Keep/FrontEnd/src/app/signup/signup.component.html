@@ -1,0 +1,31 @@
+
+<form (submit)='signupSubmit()' #frm = "ngForm" class="div-form">
+  <mat-card  class="login-div">
+    <mat-card-title>Sign up</mat-card-title>
+    <div class="divcls">
+        <mat-form-field class="textfield">
+          <input type="text" class="username" placeholder="Enter username" matInput [formControl]='username'required/>
+         </mat-form-field>
+    </div>
+     <div *ngIf="(username.touched || username.dirty) && username.invalid" style="color: red">This is a mandatory field</div>
+    <div class="divcls">
+         <mat-form-field class="textfield">
+            <input type="password"  class="password" placeholder="Enter password" matInput [formControl]='password' required />
+         </mat-form-field>
+    </div>
+    <div *ngIf="(password.touched||password.dirty) && password.invalid && password.errors.required" style="color: red" >This is mandatory field</div>
+    <div *ngIf="(password.touched||password.dirty) && password.invalid && password.errors.minlength" style="color: red" >{{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}} characters to go..></div>
+    <div *ngIf="statusString" class="error-message" [style.background]="value">
+        {{statusString}}
+    </div>
+    <div class="card-buttons">
+      <div class="divcls">
+        <button  mat-button type="submit" [disabled]='frm.invalid'>Submit</button>
+      </div>
+      <div class="divcls">
+        <button  mat-button routerLink="/login" >Login</button>
+      </div>
+    </div>
+
+  </mat-card >
+</form>

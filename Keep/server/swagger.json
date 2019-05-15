@@ -1,0 +1,206 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Application similar to Google Keep",
+    "version": "1.0.0",
+    "title": "Keep"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1/",
+  "tags": [
+    {
+      "name": "Notes",
+      "description": "Get,Post,Update and Delete the notes"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "paths": {
+    "/notes/{userId}": {
+      "get": {
+        "tags": [
+          "Notes"
+        ],
+        "summary": "Get all notes by UserID",
+        "description": "Returns all notes of the User",
+        "operationId": "getNoteByUserID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of the user",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "state": {
+                    "type": "string"
+                  },
+                  "favorite": {
+                    "type": "boolean"
+                  },
+                  "sharedTo": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "_id": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "string"
+                  },
+                  "noteId": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "reminder": {
+                    "type": "string"
+                  },
+                  "reminder_job": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied,",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "User not found,"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/notes/": {
+      "post": {
+        "tags": [
+          "Notes"
+        ],
+        "summary": "Post a new note",
+        "description": "returns the saved note",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Note",
+            "in": "body",
+            "required": true,
+            "description": "A JSON object containing note information",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "state": {
+                  "type": "string"
+                },
+                "favorite": {
+                  "type": "boolean"
+                },
+                "sharedTo": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "userId": {
+                  "type": "string"
+                },
+                "noteId": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "reminder": {
+                  "type": "string"
+                },
+                "reminder_job": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied,",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "Error in note posted"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  }
+}

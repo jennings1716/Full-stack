@@ -1,0 +1,33 @@
+mat-card-title{
+    font-size: 2em;
+}
+
+.textfield{
+    width:325px;
+}
+
+.divcls button{
+     min-width: 130px;
+    line-height: 50px;
+    font-size: 1.2em;
+}
+
+.div-form{
+     position: absolute;
+    top: 20em;
+    left:47.32em;
+    text-align: center
+}
+
+.divcls{
+    margin: 1em;
+}
+.error-message{
+    padding: 16px;
+    width: 300px;
+    color: white;
+}
+.card-buttons{
+   display: inline-flex;
+}
+

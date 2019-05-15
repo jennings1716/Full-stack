@@ -1,0 +1,67 @@
+.edit-label-text{
+    display: inline-flex;
+}
+
+.create-label{
+     display: inline-flex;
+}
+
+.delete-label{
+    background:url('../../assets/icons/delete_icon.svg');
+    width: 27px;
+    height: 25px;
+    background-size: cover;
+    margin-top: 10px;
+    margin-right: 7px
+}
+
+.add-label{
+    background:url('../../assets/icons/add_icon.svg');
+    width: 27px;
+    height: 25px;
+    background-size: cover;
+    margin-top: 10px;
+    margin-left: 7px
+}
+.create-label-text input[type="text"]{
+    text-shadow : 0 0 0 #000;
+    margin-top: 10px;
+    caret-color: black !important;
+    border-bottom: 1px solid black;
+    width: 142px;
+    font-size: 21px;
+}
+.edit-label-text input[type="text"]{
+    text-shadow : 0 0 0 #000;
+    margin-top: 10px;
+    outline : none;
+    caret-color: transparent;
+    font-size: 21px;
+}
+.edit-label-text input[type="text"]:focus{
+    text-shadow : 0 0 0 #000;
+    margin-top: 10px;
+    outline : none;
+    caret-color: black !important;
+    border-bottom: 1px solid black;
+    width: 142px;
+    font-size: 21px;
+}
+
+.editlabel-field{
+    background:url('../../assets/icons/edit_icon.svg');
+    width: 20px;
+    height: 21px;
+    background-size: cover;
+    margin-top: 14px;
+    margin-left: 7px
+}
+
+.textfield-label{
+    text-shadow : 0 0 0 #000;
+    margin-top: 10px;
+    outline : none;
+    caret-color: black !important;
+    width: 142px;
+    font-size: 21px;
+}

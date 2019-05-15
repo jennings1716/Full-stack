@@ -1,0 +1,15 @@
+
+.main{
+    display: flex;
+    width: -webkit-fill-available;
+}
+
+.sidenav{
+    width: 20%;
+    border: 2px solid black;
+    height: 84vh;
+}
+
+.dashboard{
+        width: 80%;
+}

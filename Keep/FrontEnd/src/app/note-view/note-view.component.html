@@ -1,0 +1,41 @@
+<div class="keep-c-note-container">
+    <div class="checked-card" *ngFor="let note of notes;let i=index">
+        <mat-checkbox  [ngClass]="selected[i]?'dismatcheckbox':'matcheckbox'" class="matcheckbox" id ="matcheck+{{i}}" [checked]="selected[i]" (change)="selection($event,note,i)"  matInput ></mat-checkbox>
+        <mat-card id= "matcard+{{i}}" class="matcard" (click)="checkNotes?selection($event,note,i):editNote(note.noteId)"> 
+            <div>
+                <mat-card-title>{{note.title}}</mat-card-title>
+                <mat-card-content>{{note.text}}</mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<!--<div id="remind" *ngIf="reminderOn" class="reminder">-->
+<div class="reminder-container">
+    <div  *ngFor="let reminder of displayReminders;let i=index">
+         <div id="remind"  *ngIf="displayReminders[i]" class="reminder" >
+            <div class="close_reminder" (click)="close_remindernote(i,reminder)">
+            </div>
+            <div class="reminder-text">
+                <div class="remind_note">
+                Alarm for {{reminder}}
+                </div>
+                <button class="snooze" mat-button (click)="snooze_reminder(reminder,i)">Snooze</button>
+                <div class="open_note" (click)="dismiss_reminder(reminder,i)">
+                    Dismiss
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="reminder-container" *ngIf="notification_message">
+    <div  class="reminder" >
+        <div class="close_reminder" (click)="close_notification()">
+        </div>
+        <div class="reminder-text">
+            <div class="notif-note">
+                {{ notification_message | titlecase }}
+            </div>
+        </div>
+    </div>
+</div>

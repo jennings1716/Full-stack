@@ -1,0 +1,2 @@
+				{% comment %} <mat-checkbox  id="label_check+{{i}}"  [checked]="labelStatus[item.labelId]" (change)="selectingLabels($event,item,item.labelId)" matInput >{{item.labelName}}</mat-checkbox> {% endcomment %}
+	{% comment %} <mat-checkbox  id="label_check+{{i}}" #mychecker [checked]="isChecked" (change)="test(mychecker)" matInput >{{item.labelName}}</mat-checkbox>							 {% endcomment %}

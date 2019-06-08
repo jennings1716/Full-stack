@@ -1,0 +1,71 @@
+Components are the core building block of React apps. 
+    Functional Component 
+        const cmp = () => { return <div>some JSX</div> }
+    Class based Component
+        class Cmp extends Component { render () { return <div>some JSX</div> } }
+
+JSX:
+every JSX code is compiled in to React.createElement which has the element, configuration (class names) and the children
+and that is the reason React is imported in all js files eventhough we are not using it.
+It should have one root element.
+To execute JS code within the html element enclose within curly braces {}
+
+Props:
+props can be used to pass the value as attributes in the Components
+In class based components this.props is used
+Children also passed to the component using the props: props.children
+
+State:
+It works only in class based components which extends Component.
+State maintains the variables within the component.
+
+useState hook from React gives two values i) current state ii) function to update current state
+
+Passing method reference between components <Person click={this.funcName}/> => props.click calls the function funcName
+
+to display the html blocks conditionally we can include the ternary operator with in curly braces { value ? <h1></h1> : null}
+
+render function is being called everytime when react makes an update in the screen
+So another way of conditional rendering of elements is by assigning the jsx code to a variable and use if conditions, which is the prefered way.
+
+while setting new state assign the old state to a new variable, Edit the variable and set the new variable as the new state.
+
+
+Styling in React:
+inline styles can be changed dynamically by assigning new object.
+classnames can be changed dynamically
+Radium is the react npm package which is used to add pseudo selectors and media queries to the inline styles.
+    Pseudoselectors:
+        -add ":hover:{ }" as key to the style object
+    Media Queries:
+        1) Media queries require a node package called Radium:
+            media_style = {
+                "@media (min-width: 800px)":{
+                    textAlign: "center",
+                    }
+                }
+        <h1 style={media_style}></h1>
+        2) Enclose the App and the  components using Radium: export default Radium(App)
+        3) Enclose the html code using the mediaquery withing the <StyleRoot></StyleRoot>
+    CSS Modules:
+        To use the media queries and the pseudo selector without Radium we use something called CSS modules.
+        To enable the CSS modules follow the following steps:
+            i.   Commit your work if it is git project only then it will work.
+            ii.  execute "npm run eject"
+            iii. In the config/webpack.config.js file, Search the place " test: cssRegex,".
+                 Add the two lines below importLoaders:1,
+                " modules:true,
+                  localIdentName:'[name]__[local]__[hash:base64:5]',"
+             iv. Now import css file as object:-  import classes as "./x.css"
+             v.replace the classnames with classes._classname_
+             vi. Restart the server. (Careful while editing)
+
+
+Debugging:
+    Custom Error message use Error Boundary: https://reactjs.org/docs/error-boundaries.html
+
+Project structure
+src
+|___ assets folder which contains images
+|___ components folder which contains all components 
+|___ containers folder which contains App.js and App.css

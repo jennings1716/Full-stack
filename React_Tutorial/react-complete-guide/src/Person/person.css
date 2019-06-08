@@ -1,0 +1,25 @@
+.personCard{
+    width: 90%;
+    box-shadow: 0px 2px 11px grey;
+    margin:20px;
+    padding: 10px;
+}
+
+.personCard>p{
+    word-break: break-word;
+}
+.pointer :hover{
+background: red;
+color: white;
+            
+}
+
+@media (min-width: 800px){
+    .person-card{
+        box-shadow: 0px 2px 11px grey;
+        margin:20px;
+        width:200px;
+        padding: 10px;
+    }
+        
+}

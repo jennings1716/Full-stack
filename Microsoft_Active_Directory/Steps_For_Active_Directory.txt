@@ -1,0 +1,8 @@
+https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-access-create-new-tenant
+
+https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-groups-view-azure-portal
+
+
+https://azure.microsoft.com/en-in/resources/samples/active-directory-node-webapp-openidconnect/
+
+

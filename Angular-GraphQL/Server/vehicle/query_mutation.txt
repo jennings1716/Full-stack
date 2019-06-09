@@ -1,0 +1,51 @@
+Query:
+query{
+  getAllCars{
+    carname
+  }
+}
+-------------------------------------------------------------------------------------------------
+MUTATION:
+CREATE
+mutation addNewCar($carname:String!,$year:Int!,$transmission:String!,$fuelType:String!,$engineCapacity:Int!){
+  create(carname:$carname,year:$year,transmission:$transmission,fuelType:$fuelType,engineCapacity:$engineCapacity){
+    carname
+  }
+}
+
+Sample query variable:
+{
+  "carname": "jennings",
+  "year": 1234,
+  "transmission": "Asdas",
+  "fuelType": "Petrol",
+  "engineCapacity": 1234
+}
+---------------------------------------------------------------------------------------------------------
+UPDATE
+mutation updateCarname($id:String!,$carname: String!){
+  update(id:$id,car_name: $carname){
+    _id,
+    carname,
+    year,
+    transmission,
+    fuelType,
+    engineCapacity
+  }
+}
+
+{
+  "carname": "JANICE","id": "5cfcc1a744458e33746c933e"
+}
+-----------------------------------------------------------------------------------------------------------
+DELETE
+ mutation deleteData($id:String!){
+    delete(_id:$id){
+        carname
+    }
+}
+
+{
+  "Sid": "5cfcc1a744458e33746c933e"
+}
+------------------------------------------------------------------------------------------------------------

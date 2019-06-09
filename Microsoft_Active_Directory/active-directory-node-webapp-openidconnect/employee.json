@@ -1,0 +1,80 @@
+{
+	"id": "5fb894ee-19de-412e-bcd1-1df4a6d8ffba",
+	"acceptMappedClaims": null,
+	"accessTokenAcceptedVersion": null,
+	"addIns": [],
+	"allowPublicClient": null,
+	"appId": "59844d75-970b-46d5-9bfa-5acf026088de",
+	"appRoles": [],
+	"oauth2AllowUrlPathMatching": false,
+	"createdDateTime": "2019-06-09T10:51:26Z",
+	"groupMembershipClaims": null,
+	"identifierUris": [],
+	"informationalUrls": {
+		"termsOfService": null,
+		"support": null,
+		"privacy": null,
+		"marketing": null
+	},
+	"keyCredentials": [],
+	"knownClientApplications": [],
+	"logoUrl": null,
+	"logoutUrl": null,
+	"name": "employee",
+	"oauth2AllowIdTokenImplicitFlow": true,
+	"oauth2AllowImplicitFlow": true,
+	"oauth2Permissions": [],
+	"oauth2RequirePostResponse": false,
+	"optionalClaims": null,
+	"orgRestrictions": [],
+	"parentalControlSettings": {
+		"countriesBlockedForMinors": [],
+		"legalAgeGroupRule": "Allow"
+	},
+	"passwordCredentials": [
+		{
+			"customKeyIdentifier": null,
+			"endDate": "2299-12-30T18:30:00Z",
+			"keyId": "de2940e0-82d1-461b-968e-179117b3c040",
+			"startDate": "2019-06-09T11:51:13.459Z",
+			"value": null,
+			"createdOn": "2019-06-09T11:51:14.5634841Z",
+			"hint": "Dv/",
+			"displayName": "NewClient"
+		},
+		{
+			"customKeyIdentifier": null,
+			"endDate": "2020-06-09T10:52:18.214Z",
+			"keyId": "53da5aa1-6918-4620-bdb1-2bb7e314f5b1",
+			"startDate": "2019-06-09T10:52:39.05Z",
+			"value": null,
+			"createdOn": "2019-06-09T10:52:40.1115572Z",
+			"hint": "0k3",
+			"displayName": "myClientSecret"
+		}
+	],
+	"preAuthorizedApplications": [],
+	"publisherDomain": "jenningsteam.onmicrosoft.com",
+	"replyUrlsWithType": [
+		{
+			"url": "http://localhost:3000/auth/openid/return/",
+			"type": "Web"
+		}
+	],
+	"requiredResourceAccess": [
+		{
+			"resourceAppId": "00000003-0000-0000-c000-000000000000",
+			"resourceAccess": [
+				{
+					"id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+					"type": "Scope"
+				}
+			]
+		}
+	],
+	"samlMetadataUrl": null,
+	"signInUrl": null,
+	"signInAudience": "AzureADMyOrg",
+	"tags": [],
+	"tokenEncryptionKeyId": null
+}

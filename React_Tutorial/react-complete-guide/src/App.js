@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import classes from  './App.css';
-import Person from "./Person/Person"
+import Persons from "./Persons/Persons"
 // import Radium, { StyleRoot } from "radium";
 /*function App() {
   return (
@@ -19,7 +19,14 @@ class App extends Component{
     this.onChangeHandler = this.onChangeHandler.bind(this)
     this.onToggleHandler = this.onToggleHandler.bind(this)
     this.onDeleteHandler = this.onDeleteHandler.bind(this)
+    console.log("App.js constructor");
   }
+  
+  static getDerivedStateFromProps(props,state){
+    console.log("App.js getDerivedStateFromProps",state);
+    return state;
+  }
+
   
   state ={
           persons:[{
@@ -69,6 +76,7 @@ class App extends Component{
   }
 
   render(){
+    console.log("App.js render");
     let persons = null
     let count_class = classes.healthy
     if(this.state.persons.length<3){
@@ -76,13 +84,10 @@ class App extends Component{
     }
     if(this.state.showDetails){
          persons =( 
-                      <div className={classes.App}>
-                        {
-                          this.state.persons.map((person,index)=>{
-                            return <Person delete={()=>this.onDeleteHandler(index)} change = {(event)=> this.onChangeHandler(event,index)} name={person.name} key={person.id}/>
-                          })
-                        }
-                      </div>
+                      <Persons person_array={this.state.persons}
+                        delete={this.onDeleteHandler}
+                        change={this.onChangeHandler}
+                       />
                       );
     }
     return(
@@ -99,6 +104,11 @@ class App extends Component{
      
     )
   }
+
+  componentDidMount(){
+    console.log("App.js ComponentDidMount");
+  }
+
 }
 
 export default App;

@@ -27,6 +27,17 @@ to display the html blocks conditionally we can include the ternary operator wit
 
 render function is being called everytime when react makes an update in the screen
 So another way of conditional rendering of elements is by assigning the jsx code to a variable and use if conditions, which is the prefered way.
+example 
+render(){
+    if(variable){
+        pers=(
+            <div></div>
+        )
+    }
+    return (
+        <div>{pers}</div>
+    )
+}
 
 while setting new state assign the old state to a new variable, Edit the variable and set the new variable as the new state.
 
@@ -69,3 +80,55 @@ src
 |___ assets folder which contains images
 |___ components folder which contains all components 
 |___ containers folder which contains App.js and App.css
+
+
+It is suggested to have more number of stateless components but it doesnt mean you should have one state component.\
+
+Class vs Function
+After version 16, Both class and function components or presentational component  use props before that only class can access
+lifecycle hooks can be accessed by only class based components.
+
+In functional components access state using useState()
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Component Lifecycle:
+
+LIFECYCLE HOOKS HAS NOTHING TO DO WITH REACT HOOKS
+
+COMPONENT CREATE LIFECYCLE:
+
+1. Constructor - used for basic initialization and setting states.
+                 Dont send any http request or req to google analytics or storing local storage leads to low efficiency
+
+2. getDerivedStateFromProps(props,state) - used when props are changed and synchronizing the state.
+                                            Dont send any http request or req to google analytics or storing local storage leads to low efficiency
+                                            static word should be added before
+
+3. render() - prepare and structure yourcode JSX 
+
+4. ChildComponents get Rendered 
+
+5. componentDidMount() - used for sending http requests to get new data
+                         DONT update state
+
+COMPONENT UPDATE LIFECYCLE:             
+1. getDerivedStateFromProps(props,state) -      used when props are changed and synchronizing the state.
+                                                Dont send any http request or req to google analytics or storing local storage leads to low efficiency
+                                                static word should be added before.
+
+2. shouldComponentUpdate(nextprops,nextState) - used to decide whether to render or not rendering the component.
+                                                (prevent unnecessary updatecycles)
+                                                DONT cause side-effects
+
+3. render()                                   - renders code
+
+4. All ChildComponents
+
+5. getSnapshotBeforeUpdate(prevProps,prevState)-  Last minute dom operations for example: When the dom is updated or rerenderd and want to move 
+                                                  scrolling position.It is called just after the new update is rendered.
+
+6. componentDidUpdate()                         -  used for sending http requests to get new data
+                                                   DONT update state.
+
+                                                                                                
+                                                                                                                                           

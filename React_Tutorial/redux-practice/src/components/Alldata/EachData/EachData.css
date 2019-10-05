@@ -1,0 +1,22 @@
+.Each-Container{
+    width: 179.58px;
+    padding: 4px;
+    border: 1px solid #dfe1e5;
+    border-radius: 8px;
+    box-shadow: none;
+    margin: 5px;
+}
+.title-cont{
+    display: flex;
+    justify-content: space-around;
+}
+.title-div{
+    color: #1a0dab;
+}
+.title-val{
+    color: #1a0dab;
+}
+.text-cont{
+    display: flex;
+    justify-content: space-around;
+}
